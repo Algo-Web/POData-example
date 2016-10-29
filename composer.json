@@ -18,7 +18,20 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "Algo-Web/POData": "dev-master"
+        "Algo-Web/POData": "dev-master",
+        "wikimedia/composer-merge-plugin": "^1.3"
+    },
+    "extra": {
+        "merge-plugin": {
+            "require": [
+                "tests/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-dev": true,
+            "merge-extra": false,
+            "merge-extra-deep": false
+        }
     },
     "repositories": {
         "podata": {

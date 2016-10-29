@@ -3,14 +3,13 @@ namespace PODataExample\models;
 
 use PODataExample\models\EntityTrait;
 
-class Product {
+class Photo {
 
     // This trait contains method for fields mapping (between database table and this class)
     use EntityTrait;
 
-    public $id;
-    public $added_at;
-    public $name;
-    public $weight;
-    public $code;
+    public $ID;
+    public $Content;
+    public $Rel_Type;
+    public $Rel_ID;
 }

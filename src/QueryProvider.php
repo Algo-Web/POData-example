@@ -31,9 +31,11 @@ class SimpleQueryProvider implements IQueryProvider
      */
     protected function queryAll($sql, $parameters = null)
     {
+//        var_dump($sql);
+
         $statement = $this->db->prepare($sql);
         $statement->execute($parameters);
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     /**
@@ -44,9 +46,10 @@ class SimpleQueryProvider implements IQueryProvider
      */
     protected function queryScalar($sql, $parameters = null)
     {
+//	var_dump($sql);
         $statement = $this->db->prepare($sql);
         $statement->execute($parameters);
-        $data = $statement->fetchAll(PDO::FETCH_COLUMN);
+        $data = $statement->fetchAll(\PDO::FETCH_COLUMN);
         if ($data) {
             return $data[0];
         }
@@ -253,15 +256,15 @@ class SimpleQueryProvider implements IQueryProvider
         $srcClass = get_class($sourceEntityInstance);
         $filterFieldName = $this->getTableName($this->getEntityName($srcClass)) . '_id';
         $navigationPropertiesUsedInTheFilterClause = null;
+	if("staff_id" == $filterFieldName) $filterFieldName="SignedUpBy";
         $filterExpAsDataSourceExp = '';
         if ($filterInfo) {
             $navigationPropertiesUsedInTheFilterClause = $filterInfo->getNavigationPropertiesUsed();
             $filterExpAsDataSourceExp = $filterInfo->getExpressionAsString();
         }
         $filterExpAsDataSourceExp .= $filterExpAsDataSourceExp ? ' AND ' : '';
-        $filterExpAsDataSourceExp .= $filterFieldName . ' = ' . $sourceEntityInstance->id;
+        $filterExpAsDataSourceExp .= $filterFieldName . ' = ' . $sourceEntityInstance->ID;
         $completeFilterInfo = new FilterInfo($navigationPropertiesUsedInTheFilterClause, $filterExpAsDataSourceExp);
-
         return $this->getResourceSet($queryType, $targetResourceSet, $completeFilterInfo, $orderBy, $top, $skip);
     }
 
@@ -280,7 +283,7 @@ class SimpleQueryProvider implements IQueryProvider
         $fieldName = $this->getTableName($entityName) . '_id';
 
         return $this->getResource($targetResourceSet, $keyDescriptor, [
-            $fieldName => $sourceEntityInstance->id
+            $fieldName => $sourceEntityInstance->ID
         ]);
     }
 
@@ -296,7 +299,6 @@ class SimpleQueryProvider implements IQueryProvider
         $entityClassName = $targetResourceSet->getResourceType()->getInstanceType()->name;
         $entityName = $this->getEntityName($entityClassName);
         $fieldName = $this->getTableName($entityName) . '_id';
-
         return $this->getResource($targetResourceSet, null, [
             'id' => $sourceEntityInstance->$fieldName
         ]);

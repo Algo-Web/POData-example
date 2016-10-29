@@ -1,0 +1,38 @@
+{
+    "name": "algo-web/POData-example",
+    "description": "Example of using OData on pure PHP with MySQL",
+    "keywords": ["odata", "podata", "rest","MySql"],
+    "homepage": "https://github.com/Algo-Web",
+    "type": "example",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Christopher Harris",
+            "email": "c.harriss@communicationinnovations.com.au",
+            "role": "Creator"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Algo-Web/POData-example/issues",
+        "source": "https://github.com/Algo-Web/POData-example"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "Algo-Web/POData": "dev-master"
+    },
+    "repositories": {
+        "podata": {
+            "type": "git",
+            "url": "git@github.com:Algo-Web/POData.git"
+        }
+    },
+    "autoload": {
+        "classmap": [
+            "models",
+            "src"
+        ]
+    },
+    "minimum-stability": "dev"
+
+
+}

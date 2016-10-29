@@ -1,0 +1,6 @@
+[submodule "test"]
+	path = tests
+	url = https://github.com/Algo-Web/POData-example-tests.git
+[submodule "tests"]
+	path = tests
+	url = https://github.com/Algo-Web/POData-example-tests.git

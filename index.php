@@ -13,5 +13,8 @@ use Illuminate\Http\Request;
 
 $r = new router();
 $response = $r->route();
-echo $response;
+$response->send();
+
+//echo $response->original;
+//var_dump($response);
 

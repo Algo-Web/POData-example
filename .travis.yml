@@ -8,6 +8,8 @@ php:
 
 before_script:
   - composer install
+  - mysql -e 'create database odata;'
+  - mysql -u root < db/odata.sql
 #  - wget http://getcomposer.org/composer.phar
 #  - php composer.phar require satooshi/php-coveralls:dev-master --dev --no-progress --prefer-source
 

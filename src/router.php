@@ -17,7 +17,7 @@ class router{
 public function route($request = null){
 $dsn = 'mysql:dbname=odata;host=127.0.0.1';
 $user = 'root';
-$password = "rhinoplasty";
+$password = "";
 $db = new \PDO($dsn, $user, $password);
 
 // Realisation of QueryProvider

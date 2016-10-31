@@ -14,9 +14,9 @@ before_script:
 #  - php composer.phar require satooshi/php-coveralls:dev-master --dev --no-progress --prefer-source
 
 script:
-  - mkdir -p build/logs
-  - phpunit --coverage-clover build/logs/clover.xml
-
+#  - mkdir -p build/logs
+#  - phpunit --coverage-clover build/logs/clover.xml
+  - phpunit
 after_script:
   - php vendor/bin/coveralls --exclude-no-stmt
 

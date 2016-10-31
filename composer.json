@@ -42,7 +42,8 @@
     "autoload": {
         "classmap": [
             "models",
-            "src"
+            "src",
+            "tests/RawTestCase.php"
         ]
     },
     "minimum-stability": "dev"

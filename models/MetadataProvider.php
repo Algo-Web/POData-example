@@ -26,9 +26,9 @@ class MetadataProvider
         $customerResourceSet = $metadata->addResourceSet('customer', $customerEntity);
         $photoResourceSet = $metadata->addResourceSet('photo', $photoEntity);
 
-        $metadata->addResourceReferenceProperty($staffEntity, "partner", $staffResourceSet);
-        $metadata->addResourceSetReferenceProperty($staffEntity, "customers", $customerResourceSet);
-	$metadata->addResourceReferenceProperty($customerEntity,"staff",$staffResourceSet);
+        $metadata->addResourceReferenceProperty($staffEntity, "Partner", $staffResourceSet);
+        $metadata->addResourceSetReferenceProperty($staffEntity, "Customers", $customerResourceSet);
+	$metadata->addResourceReferenceProperty($customerEntity,"Staff",$staffResourceSet);
 
 
         return $metadata;

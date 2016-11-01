@@ -26,9 +26,9 @@ class MetadataProvider
         $customerResourceSet = $metadata->addResourceSet('customer', $customerEntity);
         $photoResourceSet = $metadata->addResourceSet('photo', $photoEntity);
 
-        $metadata->addResourceReferenceProperty($staffEntity, "Partner", $staffResourceSet);
-        $metadata->addResourceSetReferenceProperty($staffEntity, "Customers", $customerResourceSet);
-	$metadata->addResourceReferenceProperty($customerEntity,"Staff",$staffResourceSet);
+        $metadata->addResourceReferenceProperty($staffEntity, "partner", $staffResourceSet);
+        $metadata->addResourceSetReferenceProperty($staffEntity, "customers", $customerResourceSet);
+	$metadata->addResourceReferenceProperty($customerEntity,"staff",$staffResourceSet);
 
 
         return $metadata;
@@ -39,11 +39,11 @@ class MetadataProvider
      */
     private static function createStaffEntityType(SimpleMetadataProvider $metadata)
     {
-        $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\Staff'), 'staff', self::MetaNamespace);
+        $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\staff'), 'staff', self::MetaNamespace);
 
         $metadata->addKeyProperty($et, 'ID', EdmPrimitiveType::INT32); 
-        $metadata->addPrimitiveProperty($et, 'Name', EdmPrimitiveType::STRING);
-//        $metadata->addPrimitiveProperty($et, 'Partner', EdmPrimitiveType::INT32);
+        $metadata->addPrimitiveProperty($et, 'name', EdmPrimitiveType::STRING);
+//        $metadata->addPrimitiveProperty($et, 'partner', EdmPrimitiveType::INT32);
 
         return $et;
     }
@@ -53,10 +53,10 @@ class MetadataProvider
      */
     private static function createCustomerEntityType(SimpleMetadataProvider $metadata)
     {
-        $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\Customer'), 'customer', self::MetaNamespace);
+        $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\customer'), 'customer', self::MetaNamespace);
 
         $metadata->addKeyProperty($et, 'ID', EdmPrimitiveType::INT32);
-        $metadata->addPrimitiveProperty($et, 'Name', EdmPrimitiveType::STRING);
+        $metadata->addPrimitiveProperty($et, 'name', EdmPrimitiveType::STRING);
 
         return $et;
     }
@@ -66,7 +66,7 @@ class MetadataProvider
      */
     private static function createPhotoEntityType(SimpleMetadataProvider $metadata)
     {
-        $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\Photo'), 'photo', self::MetaNamespace);
+        $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\photo'), 'photo', self::MetaNamespace);
 
         $metadata->addKeyProperty($et, 'ID', EdmPrimitiveType::INT32);
         $et->setMediaLinkEntry(true);

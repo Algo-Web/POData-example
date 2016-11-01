@@ -3,13 +3,13 @@ namespace PODataExample\models;
 
 use PODataExample\models\EntityTrait;
 
-class Customer {
+class customer {
 
     // This trait contains method for fields mapping (between database table and this class)
     use EntityTrait;
 
     public $ID;
-    public $Name;
-    public $Staff;
-    public $Photo;
+    public $name;
+    public $staff;
+    public $photo;
 }

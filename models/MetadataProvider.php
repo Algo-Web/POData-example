@@ -41,7 +41,7 @@ class MetadataProvider
     {
         $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\staff'), 'staff', self::MetaNamespace);
 
-        $metadata->addKeyProperty($et, 'ID', EdmPrimitiveType::INT32); 
+        $metadata->addKeyProperty($et, 'id', EdmPrimitiveType::INT32); 
         $metadata->addPrimitiveProperty($et, 'name', EdmPrimitiveType::STRING);
 //        $metadata->addPrimitiveProperty($et, 'partner', EdmPrimitiveType::INT32);
 
@@ -55,7 +55,7 @@ class MetadataProvider
     {
         $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\customer'), 'customer', self::MetaNamespace);
 
-        $metadata->addKeyProperty($et, 'ID', EdmPrimitiveType::INT32);
+        $metadata->addKeyProperty($et, 'id', EdmPrimitiveType::INT32);
         $metadata->addPrimitiveProperty($et, 'name', EdmPrimitiveType::STRING);
 
         return $et;
@@ -68,7 +68,7 @@ class MetadataProvider
     {
         $et = $metadata->addEntityType(new \ReflectionClass('PODataExample\models\photo'), 'photo', self::MetaNamespace);
 
-        $metadata->addKeyProperty($et, 'ID', EdmPrimitiveType::INT32);
+        $metadata->addKeyProperty($et, 'id', EdmPrimitiveType::INT32);
         $et->setMediaLinkEntry(true);
 //        $streamInfo = new ResourceStreamInfo('Content');
 //        $et->addNamedStream($streamInfo);

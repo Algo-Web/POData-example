@@ -8,7 +8,7 @@ class customer {
     // This trait contains method for fields mapping (between database table and this class)
     use EntityTrait;
 
-    public $ID;
+    public $id;
     public $name;
     public $staff;
     public $photo;

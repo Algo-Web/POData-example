@@ -8,8 +8,8 @@ class photo {
     // This trait contains method for fields mapping (between database table and this class)
     use EntityTrait;
 
-    public $ID;
+    public $id;
     public $content;
-    public $rel_Type;
-    public $rel_ID;
+    public $rel_type;
+    public $rel_id;
 }

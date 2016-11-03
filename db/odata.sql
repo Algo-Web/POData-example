@@ -45,7 +45,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Bilbo Baggins',1,5),(2,'Óin',1,6),(3,'Azaghâl',1,7),(4,'Gimli',1,8),(5,'Catelyn Stark',2,9),(6,'Ygritte',2,10),(7,'Melisandre',2,11),(8,'The Doctor',3,12),(9,'Susan Foreman',3,13),(10,'Death',4,14),(11,'The Hogfather',4,15),(12,'Moist von Lipwig',4,16);
+INSERT INTO `customer` VALUES (1,'Bilbo Baggins',1,5),(2,'Oin',1,6),(3,'Azaghal',1,7),(4,'Gimli',1,8),(5,'Catelyn Stark',2,9),(6,'Ygritte',2,10),(7,'Melisandre',2,11),(8,'The Doctor',3,12),(9,'Susan Foreman',3,13),(10,'Death',4,14),(11,'The Hogfather',4,15),(12,'Moist von Lipwig',4,16);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
